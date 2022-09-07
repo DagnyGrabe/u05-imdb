@@ -1,23 +1,18 @@
 <x-layout>   
     <div class="container flex flex-col md:flex-row my-10 mx-2 md:mx-6">
-            <img src="img/batman.jpg" class="m-10 w-[300px]"/>
+            <img src="{{asset('img/batman.jpg')}}" class="m-10 w-[300px]"/>
             <div class="m-10">
                 <p class="text-white text-sm mb-2">
-                    USA 2022
+                    {{$movie->country}} {{$movie->year}}
                 </p>
-                <h1 class="text-white text-3xl mb-6">The Batman</h1>
+                <h1 class="text-white text-3xl mb-6">{{$movie->title}}</h1>
                 <p class="text-white text-md font-bold mb-4">
                     <i class="fa-solid fa-star mr-1 text-yellow-500"></i>
                     5.0
                 </p>
                 
-                <p class="text-white my-2">Lorem ipsum dolor sit amet,
-                     consectetur adipiscing elit, sed do eiusmod 
-                     tempor incididunt ut labore et dolore magna aliqua. 
-                     Bibendum at varius vel pharetra vel turpis nunc eget. 
-                     Egestas pretium aenean pharetra magna ac placerat vestibulum. 
-                     In massa tempor nec feugiat nisl pretium. 
-                     Dis parturient montes nascetur ridiculus mus mauris vitae.
+                <p class="text-white my-2">
+                    {{$movie->description}}
                 </p>
                 <ul class="flex justify-items-center flex-wrap mb-6">
                     <li class="bg-yellow-500 text-black text-xs font-bold px-2 py-1 rounded-xl m-1">
