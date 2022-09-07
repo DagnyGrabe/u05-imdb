@@ -7,7 +7,7 @@
         <div class="mx-10 mt-6 mb-20 grid grid-gap-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mx-1/2">
 
             <div class="col-auto m-3 max-w-[250px]">
-                <a href="single.html">
+                <a href="/movie">
                     <img src="img/batman.jpg">
                 </a>
                 <ul class="flex justify-between mx-2 my-1">
