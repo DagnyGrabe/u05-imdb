@@ -39,3 +39,11 @@ Route::get('/register', 'App\Http\Controllers\UserController@register');
 //Store new user
 Route::post('/users', 'App\Http\Controllers\UserController@store');
 
+//Log out user
+Route::post('/logout', 'App\Http\Controllers\UserController@logout');
+
+//Show login form
+Route::get('/login', 'App\Http\Controllers\UserController@login');
+
+//Authenticate user
+Route::post('/users/authenticate', 'App\Http\Controllers\UserController@authenticate');

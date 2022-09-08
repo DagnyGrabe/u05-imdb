@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -59,6 +59,20 @@
                     </div>
                 </div>
             </form>
+            @auth
+            <a href="/" 
+               class="py-2 px-4 rounded-xl bg-yellow-500 text-sm font-bold mx-2 hover:bg-yellow-600">
+                <i class="fa-solid fa-list-ul"></i> Min lista
+            </a>
+            <form class="inline" method="POST" action="/logout">
+                @csrf
+                <button type="submit"
+                 class="py-2 px-4 rounded-xl bg-yellow-500 text-sm font-bold mx-2 hover:bg-yellow-600">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i> 
+                    Logga ut
+                </button>
+            </form> 
+            @else  
             <a href="/register" 
                class="py-2 px-4 rounded-xl bg-yellow-500 text-sm font-bold mx-2 hover:bg-yellow-600">
                 <i class="fa-solid fa-user-plus"></i> Skapa konto
@@ -67,7 +81,8 @@
                class="py-2 px-4 rounded-xl bg-yellow-500 text-sm font-bold mx-2 hover:bg-yellow-600" 
                >
                 <i class="fa-solid fa-arrow-right-to-bracket"></i> Logga in
-            </a>    
+            </a> 
+            @endauth   
         </div>
         <div class="block lg:hidden bg-yellow-500 px-4 py-1 rounded-3xl text-lg font-bold mx-8 hover:bg-yellow-600">
             <i class="fa-solid fa-bars"></i>
