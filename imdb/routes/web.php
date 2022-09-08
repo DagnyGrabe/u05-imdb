@@ -18,8 +18,14 @@ Route::get('/', 'App\Http\Controllers\MovieController@index');
 //Create a new movie
 Route::get('/movies/create', 'App\Http\Controllers\MovieController@create');
 
-//store new movie
+//Store new movie
 Route::post('/movies', 'App\Http\Controllers\MovieController@store');
+
+//Edit movie
+Route::get('/movies/{movie}/edit', 'App\Http\Controllers\MovieController@edit');
+
+//Submit edit
+Route::put('/movies/{movie}', 'App\Http\Controllers\MovieController@update');
 
 //Single movie
 Route::get('/movies/{movie}', 'App\Http\Controllers\MovieController@show'); 

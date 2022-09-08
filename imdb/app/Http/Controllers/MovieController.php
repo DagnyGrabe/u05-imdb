@@ -51,4 +51,36 @@ class MovieController extends Controller
 
         return redirect('/');
     }
+
+    //show edit form
+    public function edit(Movie $movie) {
+        return view('movies.edit', ['movie' => $movie]);
+    }
+
+    //update movie
+    public function update(Request $request, $id) {
+        $formData = $request->validate([
+            'title' => 'required',
+            'country' => 'required',
+            'year' => 'required',
+            'tags' => 'required',
+            'description' => 'required'
+        ],
+        [
+            'title.required' => 'Filmen måste ha en titel',
+            'country.required' => 'Land måste anges',
+            'year.required' => 'Årtal måste anges',
+            'tags.required' => 'Minst en kategori måste anges',
+            'description.required' => 'Filmen måste ha en beskrivning'
+        ]);
+
+        if($request->hasFile('image')) {
+            $formData['image'] = $request->file('image')->store('movie-images', 'public');
+        }
+
+        Movie::where('id', $id)->update($formData);
+
+        return redirect("/movies/$id");
+    }
+
 }
