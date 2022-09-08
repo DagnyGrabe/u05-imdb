@@ -83,4 +83,10 @@ class MovieController extends Controller
         return redirect("/movies/$id");
     }
 
+    //Delete movie
+    public function destroy(Movie $movie) {
+        $movie->delete();
+        return redirect('/');
+    }
+
 }

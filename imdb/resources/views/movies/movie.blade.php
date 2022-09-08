@@ -32,13 +32,22 @@
                 
                 <a href="#"
                 class="bg-yellow-500 text-black text-sm font-bold px-4 py-2 rounded-xl hover:bg-yellow-600">
-                    Lägg till i lista 
                     <i class="fa-solid fa-circle-plus ml-1"></i>
+                    Lägg till i lista  
                 </a>
                 <a href="/movies/{{$movie->id}}/edit"
                 class="bg-yellow-500 text-black text-sm font-bold px-4 py-2 m-2 rounded-xl hover:bg-yellow-600">
-                        <i class="fa-solid fa-pencil"></i> Edit
+                        <i class="fa-solid fa-pencil"></i> Uppdatera
                 </a>
+                <form method="POST" action="/movies/{{$movie->id}}">
+                        @csrf
+                        @method('DELETE')
+                        <button 
+                            class="bg-yellow-500 text-black text-sm font-bold px-4 py-2 m-2 rounded-xl hover:bg-yellow-600">
+                            <i class="fa-solid fa-trash"></i>
+                            Radera film
+                        </button>
+                </form>
 
             </div>
             

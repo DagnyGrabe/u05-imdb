@@ -27,6 +27,9 @@ Route::get('/movies/{movie}/edit', 'App\Http\Controllers\MovieController@edit');
 //Submit edit
 Route::put('/movies/{movie}', 'App\Http\Controllers\MovieController@update');
 
+//Delete movie
+Route::delete('/movies/{movie}', 'App\Http\Controllers\MovieController@destroy'); 
+
 //Single movie
 Route::get('/movies/{movie}', 'App\Http\Controllers\MovieController@show'); 
 
