@@ -59,10 +59,13 @@
                     </div>
                 </div>
             </form>
-            <a href="create.html" class="py-2 px-4 rounded-xl bg-yellow-500 text-sm font-bold mx-2 hover:bg-yellow-600" href="#">
-                <i class="fa-solid fa-user-plus"></i> Registrera dig
+            <a href="/register" 
+               class="py-2 px-4 rounded-xl bg-yellow-500 text-sm font-bold mx-2 hover:bg-yellow-600">
+                <i class="fa-solid fa-user-plus"></i> Skapa konto
             </a>
-            <a class="py-2 px-4 rounded-xl bg-yellow-500 text-sm font-bold mx-2 hover:bg-yellow-600" href="#">
+            <a href="/login"
+               class="py-2 px-4 rounded-xl bg-yellow-500 text-sm font-bold mx-2 hover:bg-yellow-600" 
+               >
                 <i class="fa-solid fa-arrow-right-to-bracket"></i> Logga in
             </a>    
         </div>

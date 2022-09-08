@@ -33,3 +33,9 @@ Route::delete('/movies/{movie}', 'App\Http\Controllers\MovieController@destroy')
 //Single movie
 Route::get('/movies/{movie}', 'App\Http\Controllers\MovieController@show'); 
 
+//Show register form
+Route::get('/register', 'App\Http\Controllers\UserController@register');
+
+//Store new user
+Route::post('/users', 'App\Http\Controllers\UserController@store');
+
