@@ -1,6 +1,10 @@
 <x-layout>   
     <div class="container flex flex-col md:flex-row my-10 mx-2 md:mx-6">
-            <img src="{{asset('img/batman.jpg')}}" class="m-10 w-[300px]"/>
+            <img 
+            src="{{$movie->image ? asset('storage/' . $movie->image) : asset('img/no-image.jpg')}}" 
+            class="m-10 w-[300px] h-[430px] object-cover"
+            alt="Bild från {{$movie->title}}"
+            />
             <div class="m-10">
                 <p class="text-white text-sm mb-2">
                     {{$movie->country}} {{$movie->year}}
@@ -38,7 +42,7 @@
             <div class="flex justify-around md:justify-between max-w-[500px]">
                 <h2 class="text-white text-2xl mx-6 md:mx-10">Recensioner
                 </h2>
-                <a class="bg-yellow-500 rounded-xl text-black text-sm font-bold py-2 px-4 mx-6 md:mx-16 hover:bg-yellow-600">
+                <a class="bg-yellow-500 rounded-xl text-black text-sm font-bold py-2 px-4 mx-2 md:mx-16 hover:bg-yellow-600">
                     Skriv en recension
                 </a>
             </div>

@@ -82,9 +82,9 @@
             <p class="ml-2">Copyright &copy; 2022, All Rights reserved</p>
 
             <a
-                href="#"
+                href="/movies/create"
                 class="text-white py-2 px-5"
-                >fart</a
+                >Create Movie</a
             >
     </footer>
 
