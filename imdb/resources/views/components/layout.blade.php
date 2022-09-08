@@ -72,7 +72,7 @@
         
     </nav>
 
-    <main>
+    <main class="pb-10">
         {{$slot}}
     </main>
 

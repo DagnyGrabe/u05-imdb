@@ -10,7 +10,7 @@ class MovieController extends Controller
     //show landing page
     public function index() {
         return view('index', [
-            'movies' => Movie::latest()->simplePaginate(6)
+            'movies' => Movie::latest()->filter(request(['tag', 'search']))->simplePaginate(4)
         ]);    
     }
 

@@ -1,3 +1,4 @@
+@props(['movie'])            
             <div class="col-auto m-3 max-w-[250px]">
                 <a href="/movies/{{$movie->id}}" >
                     <img 
@@ -16,15 +17,5 @@
                     </li>
                 </ul>
                 <h3 class="text-white text-2xl mx-2 my-1">{{$movie->title}}</h3>
-                <ul class="flex justify-items-center flex-wrap">
-                    <li class="bg-yellow-500 text-black text-xs font-bold px-2 py-1 rounded-xl m-1">
-                        <a href="#">action</a>
-                    </li>
-                    <li class="bg-yellow-500 text-black text-xs font-bold px-2 py-1 rounded-xl m-1">
-                        <a href="#">äventyr</a>
-                    </li>
-                    <li class="bg-yellow-500 text-black text-xs font-bold px-2 py-1 rounded-xl m-1">
-                        <a href="#">superhjältar</a>
-                    </li>
-                </ul>
+                <x-movie-tags :tagsList="$movie->tags"/>
             </div>

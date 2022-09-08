@@ -18,17 +18,7 @@
                 <p class="text-white my-2">
                     {{$movie->description}}
                 </p>
-                <ul class="flex justify-items-center flex-wrap mb-6">
-                    <li class="bg-yellow-500 text-black text-xs font-bold px-2 py-1 rounded-xl m-1">
-                        <a href="#">Action</a>
-                    </li>
-                    <li class="bg-yellow-500 text-black text-xs font-bold px-2 py-1 rounded-xl m-1">
-                        <a href="#">Äventyr</a>
-                    </li>
-                    <li class="bg-yellow-500 text-black text-xs font-bold px-2 py-1 rounded-xl m-1">
-                        <a href="#">Superhjältar</a>
-                    </li>
-                </ul>
+                <x-movie-tags :tagsList="$movie->tags"/>
                 
                 <a href="#"
                 class="bg-yellow-500 text-black text-sm font-bold px-4 py-2 rounded-xl hover:bg-yellow-600">
