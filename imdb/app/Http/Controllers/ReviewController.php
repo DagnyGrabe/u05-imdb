@@ -22,13 +22,17 @@ class ReviewController extends Controller
         $formData = $request->validate([
             'title' => 'required',
             'rating' => 'required',
-            'description' => 'required'
+            'description' => 'required',
+            'movie_id' => 'required'
         ],
         [
             'title.required' => 'Välj en titel',
             'rating.required' => 'Betygsätt',
             'description.required' => 'Skriv något'
         ]);
+
+        $formData['user_id'] = auth()->id();
+        
 
         Review::create($formData);
 

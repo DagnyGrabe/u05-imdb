@@ -19,9 +19,10 @@ class ReviewFactory extends Factory
         return [
             'title' => $this->faker->sentence(4),
             
-            'rating' => $this->faker->numberBetween(0, 5),
+            'rating' => $this->faker->numberBetween(1, 5),
             
-            'description' => $this->faker->paragraph(5)
+            'description' => $this->faker->paragraph(5),
+            'movie_id' => $this->faker->numberBetween(1, 6)
         ];
     }
 }

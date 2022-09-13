@@ -19,7 +19,7 @@ class MovieController extends Controller
     public function show(Movie $movie) {
         return view('movies.movie', [
             'movie' => $movie,
-            'reviews' => Review::latest()->get()
+            'reviews' => Review::where('movie_id', $movie['id'])->get()
         ]);
     }
 
@@ -48,6 +48,8 @@ class MovieController extends Controller
         if($request->hasFile('image')) {
             $formData['image'] = $request->file('image')->store('movie-images', 'public');
         }
+
+        $formData['user_id'] = auth()->id();
 
         Movie::create($formData);
 

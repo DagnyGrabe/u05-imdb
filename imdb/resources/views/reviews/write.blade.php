@@ -9,6 +9,10 @@
             </header>  
             <form method="POST" action="/reviews" enctype="multipart/form-data">
                 @csrf
+                <input class="hidden"
+                       type="hidden"
+                       name="movie_id"
+                       value="{{$movie->id}}"/>
 
                 <span class="mb-6 ">
                     <input 
@@ -56,6 +60,9 @@
                     <label for="rating" class="text-2xl"> 
                         <i class="fa-regular fa-star"></i>
                     </label>
+                    @error('rating')
+                        <p class="text-red-500 text-xs mt-4 text-center">{{$message}}</p>
+                    @enderror
                 </span>
                 
                 <div class="mb-6">
@@ -100,7 +107,7 @@
                     <button
                         class="rounded-xl border-2 border-black text-black text-sm font-bold py-1 px-4 bg-yellow-500 hover:bg-yellow-600"
                     >
-                        Bekräfta
+                        Skicka
                     </button>
 
                     <a href="/movies/{{$movie->id}}" class="text-black ml-10"> Tillbaka </a>

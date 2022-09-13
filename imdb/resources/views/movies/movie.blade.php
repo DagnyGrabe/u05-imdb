@@ -60,11 +60,11 @@
                     <div class="flex justify-between text-sm">
                         <h4>Username</h4>
                         <ul class="flex ml-2">
+                             
+                            @for ($i = 0; $i < $review['rating']; $i++)
                             <li><i class="fa-solid fa-star text-yellow-500"></i></li>
-                            <li><i class="fa-solid fa-star text-yellow-500"></i></li>
-                            <li><i class="fa-solid fa-star text-yellow-500"></i></li>
-                            <li><i class="fa-solid fa-star text-yellow-500"></i></li>
-                            <li><i class="fa-solid fa-star text-yellow-500"></i></li>
+                            
+                            @endfor
                         </ul>
                     </div>
                     <h3 class="text-lg font-bold my-2">{{$review->title}}</h3>
