@@ -47,3 +47,9 @@ Route::get('/login', 'App\Http\Controllers\UserController@login');
 
 //Authenticate user
 Route::post('/users/authenticate', 'App\Http\Controllers\UserController@authenticate');
+
+//Show review form
+Route::get('/write/{movie}', 'App\Http\Controllers\ReviewController@write');
+
+//Post review
+Route::post('/reviews', 'App\Http\Controllers\ReviewController@store');

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Movie;
+use App\Models\Review;
 use Illuminate\Http\Request;
 
 class MovieController extends Controller
@@ -17,7 +18,8 @@ class MovieController extends Controller
     //show single movie
     public function show(Movie $movie) {
         return view('movies.movie', [
-            'movie' => $movie
+            'movie' => $movie,
+            'reviews' => Review::latest()->get()
         ]);
     }
 

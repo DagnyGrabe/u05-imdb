@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Movie>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
  */
-class MovieFactory extends Factory
+class ReviewFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -18,12 +18,10 @@ class MovieFactory extends Factory
     {
         return [
             'title' => $this->faker->sentence(4),
-            'tags' => 'action, romantisk, dokumentär',
-            'country' => $this->faker->country(),
-            'year' => $this->faker->numberBetween(1940, 2022),
+            
+            'rating' => $this->faker->numberBetween(0, 5),
             
             'description' => $this->faker->paragraph(5)
-            
         ];
     }
 }

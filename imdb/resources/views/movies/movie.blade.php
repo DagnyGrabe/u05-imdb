@@ -46,7 +46,8 @@
             <div class="flex justify-around md:justify-between max-w-[500px]">
                 <h2 class="text-white text-2xl mx-6 md:mx-10">Recensioner
                 </h2>
-                <a class="bg-yellow-500 rounded-xl text-black text-sm font-bold py-2 px-4 mx-2 md:mx-16 hover:bg-yellow-600">
+                <a href="/write/{{$movie->id}}"
+                class="bg-yellow-500 rounded-xl text-black text-sm font-bold py-2 px-4 mx-2 md:mx-16 hover:bg-yellow-600">
                     Skriv en recension
                 </a>
             </div>
@@ -54,10 +55,11 @@
 
             <div class="flex flex-col md:flex-row md:flex-wrap m-6 mb-20">
                 
-                <div class="bg-white rounded-xl p-4 m-4 max-w-[400px]">
+            @foreach($reviews as $review)
+            <div class="bg-white rounded-xl p-4 m-4 max-w-[400px]">
                     <div class="flex justify-between text-sm">
                         <h4>Username</h4>
-                        <ul class="flex">
+                        <ul class="flex ml-2">
                             <li><i class="fa-solid fa-star text-yellow-500"></i></li>
                             <li><i class="fa-solid fa-star text-yellow-500"></i></li>
                             <li><i class="fa-solid fa-star text-yellow-500"></i></li>
@@ -65,70 +67,14 @@
                             <li><i class="fa-solid fa-star text-yellow-500"></i></li>
                         </ul>
                     </div>
-                    <h3 class="text-lg font-bold my-2">Mupp</h3>
-                    <p class="text-xs">Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit, sed do eiusmod 
-                        tempor incididunt ut labore et dolore magna aliqua. 
-                        Bibendum at varius vel pharetra vel turpis nunc eget. 
-                        Egestas pretium aenean pharetra magna ac placerat vestibulum. 
-                        In massa tempor nec feugiat nisl pretium. 
-                        Dis parturient montes nascetur ridiculus mus mauris vitae.
+                    <h3 class="text-lg font-bold my-2">{{$review->title}}</h3>
+                    <p class="text-xs">
+                    {{$review->description}}
                     </p>
                 </div>
+            @endforeach
+             
 
-                <div class="bg-white rounded-xl p-4 m-4 max-w-[400px]">
-                    <div class="flex justify-between text-sm">
-                        <h4>Username</h4>
-                        <ul>
-                            <li><i class="fa-solid fa-star text-yellow-500"></i></li>
-
-                        </ul>
-                    </div>
-                    <h3 class="text-lg font-bold my-2">Mupp</h3>
-                    <p class="text-xs">Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit, sed do eiusmod 
-                        tempor incididunt ut labore et dolore magna aliqua. 
-                        Bibendum at varius vel pharetra vel turpis nunc eget. 
-                        Egestas pretium aenean pharetra magna ac placerat vestibulum. 
-                        In massa tempor nec feugiat nisl pretium. 
-                        Dis parturient montes nascetur ridiculus mus mauris vitae.
-                    </p>
-                </div>
-
-                <div class="bg-white rounded-xl p-4 m-4 max-w-[400px]">
-                    <div class="flex justify-between text-sm">
-                        <h4>Username</h4>
-                        <ul>
-                            <li><i class="fa-solid fa-star text-yellow-500"></i></li>
-
-                        </ul>
-                    </div>
-                    <h3 class="text-lg font-bold my-2">Mupp</h3>
-                    <p class="text-xs">Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit, sed do eiusmod 
-                        tempor incididunt ut labore et dolore magna aliqua. 
-                        Bibendum at varius vel pharetra vel turpis nunc eget. 
-                        Egestas pretium aenean pharetra magna ac placerat vestibulum. 
-                        In massa tempor nec feugiat nisl pretium. 
-                        Dis parturient montes nascetur ridiculus mus mauris vitae.
-                    </p>
-                </div>
-
-                <div class="bg-white rounded-xl p-4 m-4 max-w-[400px]">
-                    <ul class="flex justify-between text-sm">
-                        <li>Username</li>
-                        <li class=><i class="fa-solid fa-star text-yellow-500"></i> 5</li>
-                    </ul>
-                    <h3 class="text-lg font-bold my-2">Mupp</h3>
-                    <p class="text-xs">Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit, sed do eiusmod 
-                        tempor incididunt ut labore et dolore magna aliqua. 
-                        Bibendum at varius vel pharetra vel turpis nunc eget. 
-                        Egestas pretium aenean pharetra magna ac placerat vestibulum. 
-                        In massa tempor nec feugiat nisl pretium. 
-                        Dis parturient montes nascetur ridiculus mus mauris vitae.
-                    </p>
-                </div>
             </div>
 
         </section>
