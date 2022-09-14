@@ -54,6 +54,12 @@ Route::get('/list', 'App\Http\Controllers\ListController@show')->middleware('aut
 //Add movie to list
 Route::post('/lists', 'App\Http\Controllers\ListController@add')->middleware('auth');
 
+//Mark movie as watched
+Route::put('/lists/{item}/edit', 'App\Http\Controllers\ListController@watched')->middleware('auth');
+
+//Delete movie from list
+Route::delete('/lists/{item}', 'App\Http\Controllers\ListController@destroy')->middleware('auth');
+
 //Show review form
 Route::get('/write/{movie}', 'App\Http\Controllers\ReviewController@write')->middleware('auth');
 

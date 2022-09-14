@@ -15,9 +15,10 @@ return new class extends Migration
     {
         Schema::create('movie_lists', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id');
-            $table->foreignId('movie_id');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('movie_id')->constrained()->onDelete('cascade');
             $table->string('title');
+            $table->boolean('watched')->default(0);
             $table->timestamps();
         });
     }

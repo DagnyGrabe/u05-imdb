@@ -38,10 +38,24 @@ class ListController extends Controller
             MovieList::create($formData);
             
         }
-        
 
-        
+        return back();
+    }
+    
+    //Mark movie as watched
+    public function watched(Request $request, $item) {
+        $watched = $request->validate([
+            'watched' => 'required'
+        ]);
 
+        MovieLIst::where('id', $item)->update($watched);
+
+        return back();
+    }
+
+    //Delete from watchlist
+    public function destroy(MovieList $item) {
+        $item->delete();
         return back();
     }
 }
