@@ -35,7 +35,7 @@
                         value="1"
                         >
                         <button type="submit"
-                        class="bg-yellow-500 text-black text-lg font-bold px-4 py-2 rounded-xl hover:bg-green-600">
+                        class="text-black text-xl font-bold px-3 py-2 rounded-xl hover:bg-green-500">
                         <i class="fa-solid fa-circle-check"></i>
                         </button>
                     @else
@@ -45,7 +45,7 @@
                         value="0"
                         >
                         <button type="submit"
-                        class="bg-green-500 text-black text-lg font-bold px-4 py-2 rounded-xl hover:bg-yellow-600">
+                        class="text-green-500 text-xl font-bold px-3 py-2 rounded-xl hover:bg-yellow-500">
                         <i class="fa-solid fa-circle-check"></i>
                         </button>
                     @endif
@@ -58,7 +58,7 @@
                     @csrf
                     @method('DELETE')
                         <button type="submit"
-                        class="bg-yellow-500 text-black text-lg font-bold px-4 py-2 rounded-xl hover:bg-red-600">
+                        class="text-black text-xl font-bold px-3 py-2 rounded-xl hover:bg-red-500">
                         <i class="fa-solid fa-circle-xmark"></i>
                         </button>
                     </form>

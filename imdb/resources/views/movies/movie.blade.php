@@ -47,6 +47,7 @@
                         @csrf
                         @method('DELETE')
                         <button 
+                            type="submit"
                             class="bg-yellow-500 text-black text-sm font-bold px-4 py-2 m-2 rounded-xl hover:bg-yellow-600">
                             <i class="fa-solid fa-trash"></i>
                             Radera film
@@ -57,11 +58,12 @@
             
         </div>
         <section class="">
-            <div class="flex justify-around md:justify-between max-w-[500px]">
-                <h2 class="text-white text-2xl mx-6 md:mx-10">Recensioner
+            <div class="flex justify-around md:justify-between max-w-[600px]">
+                <h2 class="text-white text-2xl ml-6 md:mx-10">Recensioner
                 </h2>
                 <a href="/write/{{$movie->id}}"
                 class="bg-yellow-500 rounded-xl text-black text-sm font-bold py-2 px-4 mx-2 md:mx-16 hover:bg-yellow-600">
+                    <i class="fa-solid fa-pen mr-1"></i>
                     Skriv en recension
                 </a>
             </div>
@@ -76,22 +78,7 @@
 
                 
             @foreach($reviews as $review)
-            <div class="bg-white rounded-xl p-4 m-4 max-w-[400px]">
-                    <div class="flex justify-between text-sm">
-                        <h4>{{$review->user->username}}</h4>
-                        <ul class="flex ml-2">
-                             
-                            @for ($i = 0; $i < $review['rating']; $i++)
-                            <li><i class="fa-solid fa-star text-yellow-500"></i></li>
-                            
-                            @endfor
-                        </ul>
-                    </div>
-                    <h3 class="text-lg font-bold my-2">{{$review->title}}</h3>
-                    <p class="text-xs">
-                    {{$review->description}}
-                    </p>
-                </div>
+                <x-review-card :review="$review"/>
             @endforeach
              
 

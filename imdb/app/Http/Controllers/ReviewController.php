@@ -38,4 +38,16 @@ class ReviewController extends Controller
 
         return redirect("/movies/{$formData['movie_id']}");
     }
+    
+    //Delete review if owned by user
+    public function destroy(Review $review) {
+
+        if($review['user_id'] == auth()->id()) {
+            $review->delete();
+        
+            return back();
+        } else {
+            return back();
+        }
+    }
 }

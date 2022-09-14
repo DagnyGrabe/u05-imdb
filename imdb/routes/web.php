@@ -65,3 +65,6 @@ Route::get('/write/{movie}', 'App\Http\Controllers\ReviewController@write')->mid
 
 //Post review
 Route::post('/reviews', 'App\Http\Controllers\ReviewController@store')->middleware('auth');
+
+//Delete review
+Route::delete('/reviews/{review}', 'App\Http\Controllers\ReviewController@destroy')->middleware('auth');

@@ -1,5 +1,4 @@
-@props(['movie']) 
-@props(['review'])           
+          
             <div class="col-auto m-3 max-w-[250px]">
                 <a href="/movies/{{$movie->id}}" >
                     <img 
