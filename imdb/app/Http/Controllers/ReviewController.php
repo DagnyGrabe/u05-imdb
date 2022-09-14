@@ -36,6 +36,6 @@ class ReviewController extends Controller
 
         Review::create($formData);
 
-        return redirect('/');
+        return redirect("/movies/{$formData['movie_id']}");
     }
 }

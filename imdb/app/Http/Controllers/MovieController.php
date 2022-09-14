@@ -9,17 +9,21 @@ use Illuminate\Http\Request;
 class MovieController extends Controller
 {
     //show landing page
-    public function index() {
+    public function index(Movie $movie) {
+        
         return view('index', [
-            'movies' => Movie::latest()->filter(request(['tag', 'search']))->simplePaginate(4)
+            'movies' => Movie::latest()->filter(request(['tag', 'search']))->simplePaginate(4),
+            'average' => Movie::rate($movie)
         ]);    
     }
 
     //show single movie
     public function show(Movie $movie) {
+        
         return view('movies.movie', [
             'movie' => $movie,
-            'reviews' => Review::where('movie_id', $movie['id'])->get()
+            'reviews' => Review::where('movie_id', $movie['id'])->get(),
+            'average' => Movie::rate($movie)  
         ]);
     }
 

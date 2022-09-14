@@ -1,4 +1,5 @@
-@props(['movie'])            
+@props(['movie']) 
+@props(['review'])           
             <div class="col-auto m-3 max-w-[250px]">
                 <a href="/movies/{{$movie->id}}" >
                     <img 
@@ -13,7 +14,7 @@
                     </li>
                     <li class="text-white text-sm">
                        <i class="fa-solid fa-star text-yellow-500 mr-1"></i>
-                       5.0
+                       {{$movie->rate($movie)}}
                     </li>
                 </ul>
                 <h3 class="text-white text-2xl mx-2 my-1">{{$movie->title}}</h3>

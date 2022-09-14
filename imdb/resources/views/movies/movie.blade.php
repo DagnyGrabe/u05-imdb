@@ -12,7 +12,7 @@
                 <h1 class="text-white text-3xl mb-6">{{$movie->title}}</h1>
                 <p class="text-white text-md font-bold mb-4">
                     <i class="fa-solid fa-star mr-1 text-yellow-500"></i>
-                    5.0
+                    {{$average}}
                 </p>
                 
                 <p class="text-white my-2">
@@ -54,11 +54,17 @@
             
 
             <div class="flex flex-col md:flex-row md:flex-wrap m-6 mb-20">
+            
+            @if(count($reviews)==0)
+            <h3 class="text-white text-xl mx-6"
+            >Det finns inga recensioner att visa</h3>
+            @endif
+
                 
             @foreach($reviews as $review)
             <div class="bg-white rounded-xl p-4 m-4 max-w-[400px]">
                     <div class="flex justify-between text-sm">
-                        <h4>Username</h4>
+                        <h4>{{$review->user->username}}</h4>
                         <ul class="flex ml-2">
                              
                             @for ($i = 0; $i < $review['rating']; $i++)

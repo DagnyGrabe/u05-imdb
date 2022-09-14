@@ -26,6 +26,22 @@ class Movie extends Model
         }
     }
 
+    public static function rate($movie) {
+        $reviews = Review::where('movie_id', $movie['id'])->get();
+        $sum = 0;
+        $ratings = 0;
+        foreach ($reviews as $review) {
+            $sum += $review['rating'];
+            $ratings ++;
+        }
+        if($sum == 0 || $ratings == 0) {
+            $average = 'inga betyg';
+        } else {
+        $average = (floor(($sum / $ratings)* 100)) / 100;
+        }
+        return $average;
+    }
+
     public function user() {
         return $this->belongsTo(User::class, 'user_id');
     }
