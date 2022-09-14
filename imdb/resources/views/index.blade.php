@@ -7,7 +7,7 @@
         <div class="mx-10 mt-6 mb-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mx-1/2">
 
             @if(count($movies)==0)
-            <p>Fart</p>
+            <p class="text-white text-lg">Det finns inga filmer att visa</p>
             @endif
 
 

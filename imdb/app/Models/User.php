@@ -5,6 +5,7 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Models\Movie;
 use App\Models\Review;
+use App\Models\MovieList;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -43,12 +44,17 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-
+    
+    //Database relationships
     public function movies() {
         return $this->hasMany(Movie::class, 'user_id');
     }
 
     public function reviews() {
         return $this->hasMany(Review::class, 'user_id');
+    }
+
+    public function list() {
+        return $this->hasMany(MovieList::class, 'user_id');
     }
 }

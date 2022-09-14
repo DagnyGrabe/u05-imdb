@@ -97,4 +97,6 @@ class MovieController extends Controller
         return redirect('/');
     }
 
+    
+
 }

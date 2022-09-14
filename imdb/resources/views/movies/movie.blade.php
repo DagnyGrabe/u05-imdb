@@ -20,11 +20,25 @@
                 </p>
                 <x-movie-tags :tagsList="$movie->tags"/>
                 
-                <a href="#"
-                class="bg-yellow-500 text-black text-sm font-bold px-4 py-2 rounded-xl hover:bg-yellow-600">
-                    <i class="fa-solid fa-circle-plus ml-1"></i>
-                    Lägg till i lista  
-                </a>
+                <form method="POST" action="/lists">
+                    @csrf
+                    <input class="hidden"
+                       type="hidden"
+                       name="movie_id"
+                       value="{{$movie->id}}"/>
+
+                    <input class="hidden"
+                       type="hidden"
+                       name="title"
+                       value="{{$movie->title}}"/>
+
+
+                    <button type="submit" class="bg-yellow-500 text-black text-sm font-bold px-4 py-2 rounded-xl hover:bg-yellow-600">
+                        <i class="fa-solid fa-circle-plus ml-1"></i>
+                        Lägg till i lista  
+                    </button>
+                </form>
+
                 <a href="/movies/{{$movie->id}}/edit"
                 class="bg-yellow-500 text-black text-sm font-bold px-4 py-2 m-2 rounded-xl hover:bg-yellow-600">
                         <i class="fa-solid fa-pencil"></i> Uppdatera

@@ -48,6 +48,12 @@ Route::get('/login', 'App\Http\Controllers\UserController@login')->name('login')
 //Authenticate user
 Route::post('/users/authenticate', 'App\Http\Controllers\UserController@authenticate');
 
+//Show user's list of movies
+Route::get('/list', 'App\Http\Controllers\ListController@show')->middleware('auth');
+
+//Add movie to list
+Route::post('/lists', 'App\Http\Controllers\ListController@add')->middleware('auth');
+
 //Show review form
 Route::get('/write/{movie}', 'App\Http\Controllers\ReviewController@write')->middleware('auth');
 

@@ -60,7 +60,7 @@
                 </div>
             </form>
             @auth
-            <a href="/" 
+            <a href="/list" 
                class="py-2 px-4 rounded-xl bg-yellow-500 text-sm font-bold mx-2 hover:bg-yellow-600">
                 <i class="fa-solid fa-list-ul"></i> Min lista
             </a>
