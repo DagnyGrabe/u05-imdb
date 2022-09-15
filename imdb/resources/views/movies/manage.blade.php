@@ -54,7 +54,9 @@
             </ul>
         </div>
     @endforeach  
-
+        <div class="mb-10 mx-6 md:mx-0 p-2 max-w-[600px]">
+            {{$movies->links()}}
+        </div>
 
     </div>
 </x-layout>

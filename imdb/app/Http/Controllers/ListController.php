@@ -12,7 +12,7 @@ class ListController extends Controller
     public function show() {
        
         return view('lists.list', [
-            'List_items' => MovieList::where('user_id', auth()->id())->get(),
+            'List_items' => MovieList::where('user_id', auth()->id())->filter(request(['tag', 'search']))->simplePaginate(8),
             
         ]);
     }

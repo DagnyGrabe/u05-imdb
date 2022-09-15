@@ -34,21 +34,17 @@
             <form action="">
                 <div class="relative border-none rounded-xl mx-2">
                     <div class="absolute top-[7px] left-3">
-                        <i
-                            class="fa-solid fa-search text-gray-600 z-20"
-                        ></i>
+                        <i class="fa-solid fa-search text-gray-600 z-20"></i>
                     </div>
                     <input
                         type="text"
                         name="search"
                         class="h-9 w-full pl-10 pr-20 rounded-xl z-0 focus:outline-none"
-                        placeholder="Vad vill du titta på..."
-                    />
+                        placeholder="Vad vill du titta på..."/>
                     <div class="absolute top-0 right-0">
                         <button
                             type="submit"
-                            class="h-9 w-16 text-black font-bold text-sm rounded-xl bg-yellow-500 hover:bg-yellow-600"
-                        >
+                            class="h-9 w-16 text-black font-bold text-sm rounded-xl bg-yellow-500 hover:bg-yellow-600">
                             Sök
                         </button>
                     </div>

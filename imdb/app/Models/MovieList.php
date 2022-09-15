@@ -12,6 +12,14 @@ class MovieList extends Model
     use HasFactory;
 
     protected $fillable = ['user_id', 'movie_id', 'title'];
+
+    //Search in list
+    public function scopeFilter($query, array $filters) {
+        
+        if($filters['search'] ?? false) {
+            $query->where('title', 'like', '%' . request('search') . '%');
+        }
+    }
     
     //Database relationships
     public function user() {

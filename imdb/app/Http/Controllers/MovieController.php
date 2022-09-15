@@ -25,7 +25,7 @@ class MovieController extends Controller
 
         if($user->admin == true) {
             return view('movies.manage', [
-                'movies' => Movie::latest()->get()
+                'movies' => Movie::latest()->filter(request(['tag', 'search']))->simplePaginate(8)
             ]);
         } else {
             return back();
@@ -80,7 +80,7 @@ class MovieController extends Controller
 
         Movie::create($formData);
 
-        return redirect('/');
+        return redirect('/movies/manage');
     }
 
     //show edit form
@@ -118,13 +118,13 @@ class MovieController extends Controller
 
         Movie::where('id', $id)->update($formData);
 
-        return redirect("/movies/$id");
+        return redirect("/movies/manage");
     }
 
     //Delete movie
     public function destroy(Movie $movie) {
         $movie->delete();
-        return redirect('/');
+        return redirect('/movies/manage');
     }
 
     
