@@ -93,7 +93,7 @@
                         rows="5"
                         class="border-2 border-black rounded-xl p-2 w-full"
                         name="description"
-                        placeholder="Lämna en kort beskrivning av filmen"
+                        
                     >
                     </textarea>
                         

@@ -22,11 +22,6 @@
                         lg: '976px',
                         xl: '1440px'
                     },
-                    extend: {
-                        colors: {
-                            
-                        },
-                    },
                 },
             };
         </script>
@@ -78,8 +73,7 @@
                 <i class="fa-solid fa-user-plus"></i> Skapa konto
             </a>
             <a href="/login"
-               class="py-2 px-4 rounded-xl bg-yellow-500 text-sm font-bold mx-2 hover:bg-yellow-600" 
-               >
+               class="py-2 px-4 rounded-xl bg-yellow-500 text-sm font-bold mx-2 hover:bg-yellow-600" >
                 <i class="fa-solid fa-arrow-right-to-bracket"></i> Logga in
             </a> 
             @endauth   
@@ -95,15 +89,17 @@
     </main>
 
     <footer
-        class="fixed bottom-0 left-0 w-full flex items-center justify-start bg-black text-white h-20 mt-24 md:justify-center"
-        >
+        class="fixed bottom-0 left-0 w-full flex items-center justify-start bg-black text-white h-20 mt-24 md:justify-center">
             <p class="ml-2">Copyright &copy; 2022, All Rights reserved</p>
 
-            <a
-                href="/movies/create"
-                class="text-white py-2 px-5"
-                >Create Movie</a
-            >
+            <a  href="/movies/manage"
+                class="text-white py-2 px-5">
+                Hantera filmer
+            </a>
+            <a href="/users/manage"
+                class="text-white py-2 px-5">
+                Hantera användare
+            </a>
     </footer>
 
 

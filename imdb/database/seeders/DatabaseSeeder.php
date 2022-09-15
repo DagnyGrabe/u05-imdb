@@ -19,7 +19,8 @@ class DatabaseSeeder extends Seeder
         \App\Models\User::factory(1)->create([
             'username' => 'Test',
             'password' => 'password',
-            'email' => 'test@test.com'
+            'email' => 'test@test.com',
+            'admin' => true
         ]);
 
         \App\Models\Movie::factory(6)->create([

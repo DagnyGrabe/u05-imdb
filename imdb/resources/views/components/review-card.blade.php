@@ -14,15 +14,21 @@
                     <p class="text-xs">
                     {{$review->description}}
                     </p>
+
+
+                    <!--only allow review creator and admin to delete-->
+                    @auth
+                    @if($review->user_id == auth()->id() || auth()->user()->admin)
                     <form action="/reviews/{{$review->id}}" method="POST">
                         @csrf
                         @method('DELETE')
                         <button 
                         type="submit"
-                        class="px-2 py-1 rounded-xl text-sm font-bold ml-64 hover:bg-red-500">
+                        class="px-2 py-1 mt-1 rounded-xl text-sm font-bold ml-64 hover:bg-red-500">
                             Ta bort
                             <i class="fa-solid fa-xmark ml-2"></i>
                         </button>
                     </form>
-
+                    @endif
+                    @endauth
                 </div>

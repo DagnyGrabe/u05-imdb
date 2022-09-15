@@ -15,6 +15,9 @@ use Illuminate\Support\Facades\Route;
 //Landing page
 Route::get('/', 'App\Http\Controllers\MovieController@index');
 
+//Manage movies
+Route::get('/movies/manage', 'App\Http\Controllers\MovieController@manage')->middleware('auth');
+
 //Create a new movie
 Route::get('/movies/create', 'App\Http\Controllers\MovieController@create')->middleware('auth');
 

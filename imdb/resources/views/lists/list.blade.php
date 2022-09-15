@@ -10,11 +10,11 @@
 
 
     @foreach($List_items as $item)
-        <div class="flex flex-col md:flex-row justify-between my-2 md:my-4 bg-white rounded-xl md:max-w-[600px] md:max-h-[120px]">
+        <div class="flex flex-col md:flex-row justify-between my-2 md:my-4 bg-white rounded-xl md:max-w-[600px] md:max-h-[130px]">
             <div class="flex justify-between md:justify-start items-start md:items-center">
                 <img 
                 src="{{$item->movie->image ? asset('storage/' . $item->movie->image) : asset('img/no-image.jpg')}}" 
-                class="w-[100px] h-[120px] object-cover rounded-xl"
+                class="w-[100px] h-[130px] object-stretch rounded-xl"
                 alt="Bild från {{$item->title}}"
                 />
             

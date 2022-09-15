@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Movie;
 use App\Models\Review;
 use Illuminate\Http\Request;
@@ -16,6 +17,20 @@ class MovieController extends Controller
             'average' => Movie::rate($movie)
         ]);    
     }
+    
+    //Show movies admin page
+    public function manage() {
+        $userId = \Auth::id();
+        $user = User::find($userId);
+
+        if($user->admin == true) {
+            return view('movies.manage', [
+                'movies' => Movie::latest()->get()
+            ]);
+        } else {
+            return back();
+        }
+    }
 
     //show single movie
     public function show(Movie $movie) {
@@ -29,8 +44,16 @@ class MovieController extends Controller
 
     //show create form
     public function create() {
-        return view('movies.create');
+        $userId = \Auth::id();
+        $user = User::find($userId);
+
+        if($user->admin == true) {
+            return view('movies.create');
+        } else {
+            return back();
+        }
     }
+
 
     //store movie
     public function store(Request $request) {
@@ -62,7 +85,14 @@ class MovieController extends Controller
 
     //show edit form
     public function edit(Movie $movie) {
-        return view('movies.edit', ['movie' => $movie]);
+        $userId = \Auth::id();
+        $user = User::find($userId);
+
+        if($user->admin == true) {
+            return view('movies.edit', ['movie' => $movie]);
+        } else {
+            return back();
+        }
     }
 
     //update movie
