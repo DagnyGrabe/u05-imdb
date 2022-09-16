@@ -60,6 +60,15 @@ Route::post('/users/authenticate', 'App\Http\Controllers\UserController@authenti
 //Manage users
 Route::get('/users/manage', 'App\Http\Controllers\UserController@manage')->middleware('auth');
 
+//Show edit account
+Route::get('/users/account', 'App\Http\Controllers\UserController@account')->middleware('auth');
+
+//Change username
+Route::put('/users/{user}/name', 'App\Http\Controllers\UserController@change_name')->middleware('auth');
+
+//Change username
+Route::put('/users/{user}/password', 'App\Http\Controllers\UserController@change_password')->middleware('auth');
+
 //Add or remove admin rights
 Route::put('/users/{user}', 'App\Http\Controllers\UserController@make_admin')->middleware('auth');
 

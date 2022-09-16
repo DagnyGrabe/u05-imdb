@@ -29,7 +29,8 @@
 
 <body class="bg-black">
     <nav class="flex justify-between p-4 bg-black sticky z-10 top-0">
-        <a href="/" class="text-3xl font-bold text-white">Movietime</a>
+        <a href="/" class="text-3xl font-bold text-white">
+           Movietime</a>
         <div class="hidden lg:flex justify-around items-center mx-4">
             <form action="">
                 <div class="relative border-none rounded-xl mx-2">
@@ -53,7 +54,13 @@
             @auth
             <a href="/list" 
                class="py-2 px-4 rounded-xl bg-yellow-500 text-sm font-bold mx-2 hover:bg-yellow-600">
-                <i class="fa-solid fa-list-ul"></i> Min lista
+                <i class="fa-solid fa-list-ul"></i> 
+                Min lista
+            </a>
+            <a href="/users/account" 
+               class="py-2 px-4 rounded-xl bg-yellow-500 text-sm font-bold mx-2 hover:bg-yellow-600">
+                <i class="fa-solid fa-gear"></i> 
+                Mitt konto
             </a>
             <form class="inline" method="POST" action="/logout">
                 @csrf
@@ -66,11 +73,13 @@
             @else  
             <a href="/register" 
                class="py-2 px-4 rounded-xl bg-yellow-500 text-sm font-bold mx-2 hover:bg-yellow-600">
-                <i class="fa-solid fa-user-plus"></i> Skapa konto
+                <i class="fa-solid fa-user-plus"></i> 
+                Skapa konto
             </a>
             <a href="/login"
                class="py-2 px-4 rounded-xl bg-yellow-500 text-sm font-bold mx-2 hover:bg-yellow-600" >
-                <i class="fa-solid fa-arrow-right-to-bracket"></i> Logga in
+                <i class="fa-solid fa-arrow-right-to-bracket"></i> 
+                Logga in
             </a> 
             @endauth   
         </div>
