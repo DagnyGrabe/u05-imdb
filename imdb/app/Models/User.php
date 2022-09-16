@@ -24,6 +24,7 @@ class User extends Authenticatable
         'username',
         'email',
         'password',
+        'admin'
     ];
 
     /**
@@ -44,6 +45,16 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    
+
+    //Search users
+    public function scopeFilter($query, array $filters) {
+        
+        if($filters['search'] ?? false) {
+            $query->where('username', 'like', '%' . request('search') . '%')
+                ->orWhere('email', 'like', '%' . request('search') . '%');
+        }
+    }
     
     //Database relationships
     public function movies() {

@@ -15,11 +15,14 @@ use Illuminate\Support\Facades\Route;
 //Landing page
 Route::get('/', 'App\Http\Controllers\MovieController@index');
 
-//Manage movies
-Route::get('/movies/manage', 'App\Http\Controllers\MovieController@manage')->middleware('auth');
+
+//Movie routes
 
 //Create a new movie
 Route::get('/movies/create', 'App\Http\Controllers\MovieController@create')->middleware('auth');
+
+//Manage movies
+Route::get('/movies/handle', 'App\Http\Controllers\MovieController@handle')->middleware('auth');
 
 //Store new movie
 Route::post('/movies', 'App\Http\Controllers\MovieController@store')->middleware('auth');
@@ -36,6 +39,9 @@ Route::delete('/movies/{movie}', 'App\Http\Controllers\MovieController@destroy')
 //Single movie
 Route::get('/movies/{movie}', 'App\Http\Controllers\MovieController@show'); 
 
+
+//Users routes
+
 //Show register form
 Route::get('/register', 'App\Http\Controllers\UserController@register')->middleware('guest');
 
@@ -51,6 +57,12 @@ Route::get('/login', 'App\Http\Controllers\UserController@login')->name('login')
 //Authenticate user
 Route::post('/users/authenticate', 'App\Http\Controllers\UserController@authenticate');
 
+//Manage users
+Route::get('/users/manage', 'App\Http\Controllers\UserController@manage')->middleware('auth');
+
+
+//List routes
+
 //Show user's list of movies
 Route::get('/list', 'App\Http\Controllers\ListController@show')->middleware('auth');
 
@@ -62,6 +74,9 @@ Route::put('/lists/{item}/edit', 'App\Http\Controllers\ListController@watched')-
 
 //Delete movie from list
 Route::delete('/lists/{item}', 'App\Http\Controllers\ListController@destroy')->middleware('auth');
+
+
+//Review routes
 
 //Show review form
 Route::get('/write/{movie}', 'App\Http\Controllers\ReviewController@write')->middleware('auth');

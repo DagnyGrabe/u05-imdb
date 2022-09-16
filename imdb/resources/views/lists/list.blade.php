@@ -19,7 +19,7 @@
                 />
             
                 <a href="/movies/{{$item->movie_id}}" >
-                    <h3 class="text-black text-xl my-1 md:my-4 mx-2 p-2 text-start hover:border-2 border-black rounded-xl">{{$item->title}}</h3> 
+                    <h3 class="text-black text-xl my-1 md:my-4 mx-2 px-3 py-1 text-start hover:bg-gray-200 rounded-2xl">{{$item->title}}</h3> 
                 </a>
             </div>
 
@@ -35,7 +35,7 @@
                         value="1"
                         >
                         <button type="submit"
-                        class="text-black text-xl font-bold px-3 py-2 rounded-xl hover:bg-green-500">
+                        class="text-black text-xl font-bold px-3 py-2 rounded-3xl hover:bg-green-500">
                         <i class="fa-solid fa-circle-check"></i>
                         </button>
                     @else
@@ -45,7 +45,7 @@
                         value="0"
                         >
                         <button type="submit"
-                        class="text-green-500 text-xl font-bold px-3 py-2 rounded-xl hover:bg-yellow-500">
+                        class="text-green-500 text-xl font-bold px-3 py-2 rounded-3xl hover:bg-yellow-500">
                         <i class="fa-solid fa-circle-check"></i>
                         </button>
                     @endif
@@ -58,7 +58,7 @@
                     @csrf
                     @method('DELETE')
                         <button type="submit"
-                        class="text-black text-xl font-bold px-3 py-2 rounded-xl hover:bg-red-500">
+                        class="text-black text-xl font-bold px-3 py-2 rounded-3xl hover:bg-red-500">
                         <i class="fa-solid fa-circle-xmark"></i>
                         </button>
                     </form>
@@ -67,7 +67,9 @@
             </ul>
         </div>
     @endforeach  
-
+    <div class="mb-10 mx-6 md:mx-0 p-2 max-w-[600px]">
+            {{$List_items->links()}}
+    </div>
 
 </div>
 </x-layout>

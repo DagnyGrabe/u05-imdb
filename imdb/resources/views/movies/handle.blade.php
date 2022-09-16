@@ -25,14 +25,14 @@
                 />
             
                 <a href="/movies/{{$movie->id}}" >
-                    <h3 class="text-black text-xl my-1 mt-4 md:my-4 mx-2 p-2 text-start hover:border-2 border-black rounded-xl">{{$movie->title}}</h3> 
+                    <h3 class="text-black text-xl my-1 mt-4 md:my-4 mx-2 px-3 py-1 text-start hover:bg-gray-200 rounded-2xl">{{$movie->title}}</h3> 
                 </a>
             </div>
 
             <ul class="flex flex-row md:flex-col justify-between items-baseline md:items-end m-2 md:w-40">
                 <li>
                     <a href="/movies/{{$movie->id}}/edit"
-                    class="py-2 px-3 rounded-xl bg-yellow-500 text-sm text-black font-bold hover:bg-yellow-600">
+                    class="py-2 px-3 rounded-xl text-sm text-black font-bold hover:bg-yellow-500">
                     <i class="fa-solid fa-pen mr-1"></i>
                     Uppdatera
                     </a>
@@ -44,7 +44,7 @@
                     @csrf
                     @method('DELETE')
                         <button type="submit"
-                        class="text-black text-sm bg-yellow-500 font-bold px-3 py-2 rounded-xl hover:bg-red-500">
+                        class="text-black text-sm font-bold px-3 py-2 rounded-xl hover:bg-red-500">
                         <i class="fa-solid fa-trash mr-1"></i>
                         Radera film
                         </button>

@@ -77,4 +77,21 @@ class UserController extends Controller
 
         return back()->withErrors(['username' => 'Fel!']);
     }
+
+    //Show manage users page
+    public function manage() {
+        $userId = \Auth::id();
+        $user = User::find($userId);
+
+        if($user->admin == true) {
+            return view('users.manage', [
+                'users' => User::all()->sortBy('username')
+            ]);
+        } else {
+            return back();
+        }
+    }
+
+
+    
 }

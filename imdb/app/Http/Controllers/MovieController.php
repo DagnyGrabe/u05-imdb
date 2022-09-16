@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\Movie;
 use App\Models\Review;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class MovieController extends Controller
 {
@@ -19,13 +20,13 @@ class MovieController extends Controller
     }
     
     //Show movies admin page
-    public function manage() {
-        $userId = \Auth::id();
+    public function handle() {
+        $userId = Auth::id();
         $user = User::find($userId);
 
         if($user->admin == true) {
-            return view('movies.manage', [
-                'movies' => Movie::latest()->filter(request(['tag', 'search']))->simplePaginate(8)
+            return view('movies.handle', [
+                'movies' => Movie::latest()->filter(request(['tag','search']))->simplePaginate(8)
             ]);
         } else {
             return back();
