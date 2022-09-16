@@ -85,13 +85,28 @@ class UserController extends Controller
 
         if($user->admin == true) {
             return view('users.manage', [
-                'users' => User::all()->sortBy('username')
+                'users' => User::orderBy('username')->filter(request(['search', 'admin']))->simplePaginate(8)
             ]);
         } else {
             return back();
         }
     }
 
+    //Add or remove admin rights
+    public function make_admin(Request $request, $user) {
+        $admin = $request->validate([
+            'admin' => 'required'
+        ]);
 
+        User::where('id', $user)->update($admin);
+
+        return back();
+    }
+
+    //Delete user account
+    public function destroy(User $user) {
+        $user->delete();
+        return back();
+    }
     
 }

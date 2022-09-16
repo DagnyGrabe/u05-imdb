@@ -28,7 +28,7 @@
                     <form action="/lists/{{$item->id}}/edit" method="POST">
                     @csrf
                     @method('PUT')
-                    @if($item['watched']==0)
+                    @if($item->watched==0)
                         <input 
                         type="hidden"
                         name="watched"

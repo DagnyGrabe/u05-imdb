@@ -3,6 +3,21 @@
         <h1 class="text-white text-2xl my-4">
         Hantera användare
         </h1>
+        
+        <ul class="flex flex-row justify-start mt-4 mb-2">
+            <li>
+                <a href="/users/manage/?admin=true"
+                   class="py-2 px-4 rounded-xl bg-yellow-500 text-sm font-bold w-48 hover:bg-yellow-600" >
+                   Visa admins
+                </a>
+            </li>
+            <li>
+                <a href="/users/manage"
+                   class="py-2 px-4 mx-4 rounded-xl bg-yellow-500 text-sm font-bold w-48 hover:bg-yellow-600" >
+                   Visa alla
+                </a>
+            </li>
+        </ul>
 
     @if(count($users)==0)
         <p class="text-white text-lg">Det finns inga användare att visa</p>
@@ -29,7 +44,7 @@
             </ul>
 
             <div class="flex flex-col justify-between sm:items-end">
-            @if($user->admin == true)
+            @if($user->admin == 1)
                 <p class="text-green-600 text-sm sm:text-md font-bold mx-4 md:mx-6 mb-2 sm:my-2 rounded-xl">
                     <i class="fa-solid fa-check mr-1"></i>
                     Admin
@@ -44,10 +59,10 @@
                         @csrf
                         @method('PUT')
 
-                        @if($user->admin == false)
+                        @if($user->admin == 0)
                             <input type="hidden"
                                 name="admin"
-                                value="true">
+                                value="1">
                             </input>
                             <button type="submit"
                                 class="p-1 md:py-2 md:px-3 mx-2 rounded-xl text-sm text-black font-bold hover:bg-green-500">
@@ -57,7 +72,7 @@
                         @else
                             <input type="hidden"
                                 name="admin"
-                                value="false">
+                                value="0">
                             </input>
                             <button type="submit"
                                 class="p-1 md:py-2 md:px-3 mx-2 rounded-xl text-sm text-black font-bold hover:bg-yellow-500">
@@ -85,6 +100,10 @@
             </div>
         </div>
     @endforeach  
+
+        <div class="mb-10 mx-6 md:mx-0 p-2 max-w-[600px]">
+            {{$users->links()}}
+        </div>
         
 
     </div>

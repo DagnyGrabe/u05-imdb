@@ -125,7 +125,7 @@ class MovieController extends Controller
     //Delete movie
     public function destroy(Movie $movie) {
         $movie->delete();
-        return redirect('/movies/manage');
+        return back();
     }
 
     

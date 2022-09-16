@@ -49,6 +49,10 @@ class User extends Authenticatable
 
     //Search users
     public function scopeFilter($query, array $filters) {
+
+        if($filters['admin'] ?? false) {
+            $query->where('admin', '1');
+        }
         
         if($filters['search'] ?? false) {
             $query->where('username', 'like', '%' . request('search') . '%')

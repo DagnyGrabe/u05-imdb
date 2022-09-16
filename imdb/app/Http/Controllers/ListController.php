@@ -54,7 +54,7 @@ class ListController extends Controller
     }
 
     //Delete from watchlist
-    public function destroy(MovieList $item) {
+    public function remove(MovieList $item) {
         $item->delete();
         return back();
     }

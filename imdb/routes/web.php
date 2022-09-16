@@ -60,6 +60,12 @@ Route::post('/users/authenticate', 'App\Http\Controllers\UserController@authenti
 //Manage users
 Route::get('/users/manage', 'App\Http\Controllers\UserController@manage')->middleware('auth');
 
+//Add or remove admin rights
+Route::put('/users/{user}', 'App\Http\Controllers\UserController@make_admin')->middleware('auth');
+
+//Delete user account
+Route::delete('/users/{user}', 'App\Http\Controllers\UserController@destroy')->middleware('auth');
+
 
 //List routes
 
@@ -73,7 +79,7 @@ Route::post('/lists', 'App\Http\Controllers\ListController@add')->middleware('au
 Route::put('/lists/{item}/edit', 'App\Http\Controllers\ListController@watched')->middleware('auth');
 
 //Delete movie from list
-Route::delete('/lists/{item}', 'App\Http\Controllers\ListController@destroy')->middleware('auth');
+Route::delete('/lists/{item}', 'App\Http\Controllers\ListController@remove')->middleware('auth');
 
 
 //Review routes
