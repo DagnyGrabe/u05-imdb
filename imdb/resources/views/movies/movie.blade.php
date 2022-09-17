@@ -1,11 +1,12 @@
 <x-layout>   
-    <div class="container flex flex-col md:flex-row my-10 mx-2 md:mx-6">
+        <div class="flex flex-col lg:flex-row justify-start my-10 mx-2 md:mx-6">
+
             <img 
             src="{{$movie->image ? asset('storage/' . $movie->image) : asset('img/no-image.jpg')}}" 
             class="m-10 w-[300px] h-[430px] object-cover"
             alt="Bild från {{$movie->title}}"
             />
-            <div class="m-10">
+            <div class="m-10 md:max-w-[400px]">
                 <p class="text-white text-sm mb-2">
                     {{$movie->country}} {{$movie->year}}
                 </p>
@@ -15,7 +16,7 @@
                     {{$average}}
                 </p>
                 
-                <p class="text-white my-2 max-w-64 text-justify">
+                <p class="text-white my-2">
                     {{$movie->description}}
                 </p>
                 <x-movie-tags :tagsList="$movie->tags"/>
@@ -40,8 +41,25 @@
                 </form>
 
             </div>
+            <div class="m-10">
+                <h2 class="text-white text-xl mb-6">
+                    Trailer
+                </h2>
+
+                @if(!empty($movie->video))
+                <iframe src="{{$movie->video}}"
+                    class="h-[180px] w-[270px] md:h-[240px] md:w-[360px]" 
+                    frameborder="0" allowfullscreen>
+                </iframe>
+                @else
+                <p class="text-white text-lg">
+                    Den här filmen har ingen Trailer
+                </p>
+                @endif
+            </div>
             
         </div>
+
         <section class="">
             <div class="flex justify-around md:justify-between max-w-[600px]">
                 <h2 class="text-white text-2xl ml-6 md:mx-10">Recensioner
@@ -54,10 +72,10 @@
             </div>
             
 
-            <div class="flex flex-col md:flex-row md:flex-wrap m-6 mb-20">
+            <div class="flex flex-col justify-start items-start md:flex-row md:flex-wrap m-2 md:m-6 mb-20">
             
             @if(count($reviews)==0)
-            <h3 class="text-white text-xl mx-6"
+            <h3 class="text-white text-xl mx-6 mb-6"
             >Det finns inga recensioner att visa</h3>
             @endif
 

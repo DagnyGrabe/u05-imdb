@@ -5,7 +5,7 @@
                 <h1 class="text-2xl font-bold mb-1">
                     Uppdatera film
                 </h1>
-                <p class="mb-6 text-sm">Uppdatera: {{$movie->title}}</p>
+                <p class="mb-6 text-sm">{{$movie->title}}</p>
             </header>
 
             <form method="POST" action="/movies/{{$movie->id}}" enctype="multipart/form-data">
@@ -110,6 +110,20 @@
                 </div>
 
                 <div class="mb-6">
+                    <label for="video" class="inline-block text-md mb-2">
+                        Länk till trailer
+                    </label>
+                    <input
+                        type="text"
+                        class="border-2 border-black rounded-xl p-2 w-full"
+                        name="video"
+                        value="{{$movie->video}}"
+                    />
+                    
+                </div>
+
+
+                <div class="mb-6">
                     <label
                         for="description"
                         class="inline-block text-md mb-2">
@@ -133,8 +147,8 @@
 
                 <div class="mb-6">
                     <button
-                        class="rounded-xl border-2 border-black text-black text-sm font-bold py-1 px-4 bg-yellow-500 hover:bg-yellow-600"
-                    >
+                        type="submit"
+                        class="rounded-xl border-2 border-black text-black text-sm font-bold py-1 px-4 bg-yellow-500 hover:bg-yellow-600">
                         Uppdatera
                     </button>
 

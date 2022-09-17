@@ -77,11 +77,15 @@ class MovieController extends Controller
             $formData['image'] = $request->file('image')->store('movie-images', 'public');
         }
 
+        if(!empty($request['video'])) {
+            $formData['video'] = $request['video'];
+        }
+
         $formData['user_id'] = auth()->id();
 
         Movie::create($formData);
 
-        return redirect('/movies/manage');
+        return redirect('/movies/handle');
     }
 
     //show edit form
@@ -117,9 +121,13 @@ class MovieController extends Controller
             $formData['image'] = $request->file('image')->store('movie-images', 'public');
         }
 
+        if(!empty($request['video'])) {
+            $formData['video'] = $request['video'];
+        }
+
         Movie::where('id', $id)->update($formData);
 
-        return redirect("/movies/manage");
+        return redirect("/movies/handle");
     }
 
     //Delete movie

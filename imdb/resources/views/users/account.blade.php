@@ -1,12 +1,19 @@
 <x-layout>
     <div class="m-10 flex flex-col items-stretch flex-wrap md:m-20">
+        
         <h1 class="text-white text-2xl my-4">
             Mitt konto
         </h1>
 
-        <div class="bg-white p-6 sm:p-10 rounded-xl max-w-lg my-8">
+        <div class="bg-white p-6 sm:p-10 rounded-xl max-w-lg my-8 relative">
             <header class="text-center">
-                <h2 class="text-2xl font-bold mb-10">
+            @if($user->admin == 1)
+                <p class="text-green-600 text-sm sm:text-lg font-bold mx-4 md:mx-6 mb-2 sm:my-2 rounded-xl absolute right-1 top-1">
+                    <i class="fa-solid fa-check mr-1"></i>
+                    Admin
+                </p>
+            @endif
+                <h2 class="text-2xl font-bold mb-10 mt-4">
                     Ändra konto
                 </h2>
             </header>
@@ -32,8 +39,7 @@
                         type="text"
                         class="border-2 border-black rounded-xl p-2 w-full"
                         name="username"
-                        value="{{$user->username}}"
-                    />
+                        value="{{$user->username}}"/>
                     @error('username')
                         <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                     @enderror
@@ -48,8 +54,7 @@
                     <input
                         type="password"
                         class="border-2 border-black rounded-xl p-2 w-full"
-                        name="password"
-                    />
+                        name="password"/>
                     @error('password')
                         <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                     @enderror
@@ -80,8 +85,7 @@
                     <input
                         type="password"
                         class="border-2 border-black rounded-xl p-2 w-full"
-                        name="old_password"
-                    />
+                        name="old_password"/>
                     @error('old_password')
                         <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                     @enderror
@@ -97,8 +101,7 @@
                     <input
                         type="password"
                         class="border-2 border-black rounded-xl p-2 w-full"
-                        name="new_password"
-                    />
+                        name="new_password"/>
                     @error('new_password')
                         <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                     @enderror
@@ -114,8 +117,7 @@
                     <input
                         type="password"
                         class="border-2 border-black rounded-xl p-2 w-full"
-                        name="new_password_confirmation"
-                    />
+                        name="new_password_confirmation"/>
                     @error('new_password_confirmation')
                         <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                     @enderror

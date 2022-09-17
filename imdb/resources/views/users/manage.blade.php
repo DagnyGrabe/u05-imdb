@@ -55,7 +55,7 @@
                 
                 <ul class="flex flex-row justify-between sm:items-end my-2 mx-1">
                     <li>
-                        <form action="/users/{{$user->id}}" method="POST">
+                        <form action="/users/{{$user->id}}/admin" method="POST">
                         @csrf
                         @method('PUT')
 

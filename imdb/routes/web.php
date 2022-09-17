@@ -70,7 +70,7 @@ Route::put('/users/{user}/name', 'App\Http\Controllers\UserController@change_nam
 Route::put('/users/{user}/password', 'App\Http\Controllers\UserController@change_password')->middleware('auth');
 
 //Add or remove admin rights
-Route::put('/users/{user}', 'App\Http\Controllers\UserController@make_admin')->middleware('auth');
+Route::put('/users/{user}/admin', 'App\Http\Controllers\UserController@make_admin')->middleware('auth');
 
 //Delete user account
 Route::delete('/users/{user}', 'App\Http\Controllers\UserController@destroy')->middleware('auth');

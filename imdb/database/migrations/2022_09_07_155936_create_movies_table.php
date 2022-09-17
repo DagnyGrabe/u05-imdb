@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('year');
             $table->string('tags');
             $table->string('image')->nullable();
+            $table->string('video')->nullable();
             $table->longText('description');
             $table->timestamps();
         });

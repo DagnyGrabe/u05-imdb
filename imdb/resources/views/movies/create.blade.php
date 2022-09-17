@@ -100,6 +100,19 @@
                 </div>
 
                 <div class="mb-6">
+                    <label for="video" class="inline-block text-md mb-2">
+                        Länk till trailer
+                    </label>
+                    <input
+                        type="text"
+                        class="border-2 border-black rounded-xl p-2 w-full"
+                        name="video"
+                        placeholder="ex: https://youtube.com/embed/pNo-Q0IDJi0"
+                    />
+                    
+                </div>
+
+                <div class="mb-6">
                     <label
                         for="description"
                         class="inline-block text-md mb-2">
