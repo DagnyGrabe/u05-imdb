@@ -40,23 +40,31 @@
                 </li>
             
                 <li>
-                    <form action="/movies/{{$movie->id}}" method="POST">
-                    @csrf
-                    @method('DELETE')
-                        <button type="submit"
-                        class="text-black text-sm font-bold px-3 py-2 rounded-xl hover:bg-red-500">
+                    <button class="alert text-black text-sm font-bold px-3 py-2 rounded-xl hover:bg-red-500">
                         <i class="fa-solid fa-trash mr-1"></i>
                         Radera film
-                        </button>
-                    </form>
+                    </button>
                 </li>
                        
             </ul>
+            <x-alert-message>
+                <form action="/movies/{{$movie->id}}" method="POST">
+                @csrf
+                @method('DELETE')
+                    <button type="submit"
+                        class="text-black text-sm font-bold px-3 py-2 rounded-xl hover:bg-red-500">
+                        <i class="fa-solid fa-trash mr-1"></i>
+                        Radera
+                    </button>
+                </form>
+            </x-alert-message>
         </div>
     @endforeach  
+    
         <div class="mb-10 mx-6 md:mx-0 p-2 max-w-[600px]">
             {{$movies->links()}}
         </div>
 
     </div>
+    
 </x-layout>

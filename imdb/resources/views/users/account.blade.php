@@ -125,20 +125,23 @@
                         class="rounded-xl border-2 border-black text-black text-sm font-bold py-1 px-4 bg-yellow-500 hover:bg-yellow-600">
                         Spara
                     </button>                    
-                </div>
+                </div>       
+            </form>
+            <button class="alert text-black text-sm font-bold mx-2 p-1 md:px-3 md:py-2 rounded-xl hover:bg-red-500">
+                <i class="fa-solid fa-xmark mr-1"></i>
+                    Radera konto
+            </button>
+            <x-alert-message>
                 <form action="/users/{{$user->id}}" method="POST">
                     @csrf
                     @method('DELETE')
-                        <button type="submit"
-                                class="text-black text-sm font-bold mx-2 p-1 md:px-3 md:py-2 rounded-xl hover:bg-red-500">
-                            <i class="fa-solid fa-xmark mr-1"></i>
-                                Radera konto
-                        </button>
+                    <button type="submit"
+                        class="text-black text-sm font-bold mx-2 p-1 md:px-3 md:py-2 rounded-xl hover:bg-red-500">
+                        <i class="fa-solid fa-trash mr-1"></i>
+                         Radera
+                    </button>
                 </form>
-
-                        
-            </form>
-
+            </x-alert-message>
             
         </div>
     

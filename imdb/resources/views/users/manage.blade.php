@@ -86,18 +86,25 @@
                     </li>
             
                     <li>
-                        <form action="/users/{{$user->id}}" method="POST">
-                        @csrf
-                        @method('DELETE')
-                            <button type="submit"
-                                class="text-black text-sm font-bold mx-2 p-1 md:px-3 md:py-2 rounded-xl hover:bg-red-500">
-                                <i class="fa-solid fa-xmark mr-1"></i>
-                                Radera konto
-                            </button>
-                        </form>
+                        <button class="alert text-black text-sm font-bold mx-2 p-1 md:px-3 md:py-2 rounded-xl hover:bg-red-500">
+                            <i class="fa-solid fa-xmark mr-1"></i>
+                            Radera Användare
+                        </button>
+                        
                     </li>   
                 </ul>
             </div>
+            <x-alert-message>
+                <form action="/users/{{$user->id}}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit"
+                        class="text-black text-sm font-bold mx-2 p-1 md:px-3 md:py-2 rounded-xl hover:bg-red-500">
+                        <i class="fa-solid fa-trash mr-1"></i>
+                        Radera
+                    </button>
+                </form>
+            </x-alert-message>
         </div>
     @endforeach  
 

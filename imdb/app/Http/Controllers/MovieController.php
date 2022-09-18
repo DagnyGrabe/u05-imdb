@@ -133,7 +133,7 @@ class MovieController extends Controller
     //Delete movie
     public function destroy(Movie $movie) {
         $movie->delete();
-        return back();
+        return back()->with('message', 'Filmen raderad!');
     }
 
     

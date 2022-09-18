@@ -169,8 +169,9 @@ class UserController extends Controller
 
     //Delete user account
     public function destroy(User $user) {
+        
         $user->delete();
-        return back();
+        return back()->with('message', 'Konto raderat!');  
     }
     
 }

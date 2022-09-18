@@ -134,8 +134,7 @@
 
                 <div class="mb-6">
                     <button
-                        class="rounded-xl border-2 border-black text-black text-sm font-bold py-1 px-4 bg-yellow-500 hover:bg-yellow-600"
-                    >
+                        class="rounded-xl border-2 border-black text-black text-sm font-bold py-1 px-4 bg-yellow-500 hover:bg-yellow-600">
                         Lägg till
                     </button>
 

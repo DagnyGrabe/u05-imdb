@@ -42,7 +42,7 @@ class ReviewController extends Controller
         ->with('message', 'Recension postad!');
     }
     
-    //Delete review if owned by user
+    //Delete review
     public function destroy(Review $review) {
         $userId = \Auth::id();
         $user = User::find($userId);
