@@ -103,7 +103,7 @@
 
                     <img 
                     src="{{$movie->image ? asset('storage/' . $movie->image) : asset('img/no-image.jpg')}}" 
-                    class="m-10 w-[300px] h-[430px] object-cover"
+                    class="m-10 w-[120px] h-[160px] object-cover"
                     alt="Bild från {{$movie->title}}"
                     />
                     

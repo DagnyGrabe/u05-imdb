@@ -97,13 +97,14 @@
             </form>
 
             <div class="text-center">
-                <span class="text-md">
+                <p class="text-md mb-2">
                     Har du redan ett konto?
-                    <a href="/login"
+                </p>
+                <a href="/login"
                     class="rounded-xl border-2 border-black text-black text-sm font-bold py-1 px-4 mx-2 bg-yellow-500 hover:bg-yellow-600">
                     Logga in
-                    </a>
-                </span>
+                </a>
+                
             </div>
         </div>
     </x-layout>

@@ -49,8 +49,7 @@
 
                 <div class="mb-10">
                     <button
-                        class="rounded-xl border-2 border-black text-black text-sm font-bold py-1 px-4 bg-yellow-500 hover:bg-yellow-600"
-                    >
+                        class="rounded-xl border-2 border-black text-black text-sm font-bold py-1 px-4 bg-yellow-500 hover:bg-yellow-600">
                         Logga in
                     </button>
 
@@ -61,13 +60,14 @@
             </form>
 
             <div class="text-center">
-                <span class="text-md">
+                <p class="text-md mb-2">
                     Har du inget konto än?
-                    <a href="/register"
+                </p>
+                <a href="/register"
                     class="rounded-xl border-2 border-black text-black text-sm font-bold py-1 px-4 mx-2 bg-yellow-500 hover:bg-yellow-600">
                     Skapa konto
-                    </a>
-                </span>
+                </a>
+                
             </div>
         </div>
     </x-layout>

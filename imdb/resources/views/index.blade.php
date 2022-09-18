@@ -21,6 +21,13 @@
         <div class="mb-10 mx-6 p-2">
             {{$movies->links()}}
         </div>
+        @push('other-scripts')
+        <script>
+            
+            
+        </script>
+@endpush
+
 </x-layout>
   
     
