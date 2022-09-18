@@ -21,8 +21,7 @@
                         type="text"
                         class="border-2 border-black rounded-xl  p-2 w-full"
                         name="email"
-                        placeholder="example@example.com"
-                    />
+                        placeholder="example@example.com"/>
                     @error('email')
                         <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                     @enderror
@@ -39,8 +38,7 @@
                         type="text"
                         class="border-2 border-black rounded-xl p-2 w-full"
                         name="username"
-                        placeholder="Måste vara unikt"
-                    />
+                        placeholder="Måste vara unikt"/>
                     @error('username')
                         <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                     @enderror
@@ -57,8 +55,7 @@
                         type="password"
                         class="border-2 border-black rounded-xl p-2 w-full"
                         name="password"
-                        placeholder="Minst 6 tecken"
-                    />
+                        placeholder="Minst 6 tecken"/>
                     @error('password')
                         <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                     @enderror
@@ -74,8 +71,7 @@
                     <input
                         type="password"
                         class="border-2 border-black rounded-xl p-2 w-full"
-                        name="password_confirmation"
-                    />
+                        name="password_confirmation"/>
                     @error('password_confirmation')
                         <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                     @enderror
@@ -85,8 +81,7 @@
 
                 <div class="mb-10">
                     <button
-                        class="rounded-xl border-2 border-black text-black text-sm font-bold py-1 px-4 bg-yellow-500 hover:bg-yellow-600"
-                    >
+                    class="rounded-xl border-2 border-black text-black text-sm font-bold py-1 px-4 bg-yellow-500 hover:bg-yellow-600">
                         Registrera
                     </button>
 

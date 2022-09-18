@@ -33,13 +33,13 @@ class ListController extends Controller
                 ])->first();
 
         if($item != null) {
-            return back()->withErrors('fart');
+            return back()->with('message', 'Du har redan lagt till den här filmen!');
         } else {
             MovieList::create($formData);
             
         }
 
-        return back();
+        return back()->with('message', 'Filmen har lagts till!');
     }
     
     //Mark movie as watched

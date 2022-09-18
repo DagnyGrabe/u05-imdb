@@ -11,3 +11,10 @@ hamburger.addEventListener('click', function() {
         menu.classList.add('hidden');
     }
 });
+
+
+//Hide flash messages
+setTimeout(() => {
+    const flash = document.querySelector('.flash');
+    flash.classList.add('hidden');
+}, 3000);

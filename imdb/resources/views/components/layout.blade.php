@@ -176,7 +176,7 @@
                 Hantera användare
             </a>
     </footer>
-
+    <x-flash-message />
 
 </body>
 </html>

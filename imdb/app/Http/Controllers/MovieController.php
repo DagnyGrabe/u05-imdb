@@ -85,7 +85,7 @@ class MovieController extends Controller
 
         Movie::create($formData);
 
-        return redirect('/movies/handle');
+        return redirect('/movies/handle')->with('message', 'Filmen har lagt till');
     }
 
     //show edit form
@@ -127,7 +127,7 @@ class MovieController extends Controller
 
         Movie::where('id', $id)->update($formData);
 
-        return redirect("/movies/handle");
+        return redirect("/movies/handle")->with('message', 'Uppdaterat!');
     }
 
     //Delete movie

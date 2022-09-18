@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Movie;
 use App\Models\Review;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ReviewController extends Controller
 {
@@ -36,18 +38,21 @@ class ReviewController extends Controller
 
         Review::create($formData);
 
-        return redirect("/movies/{$formData['movie_id']}");
+        return redirect("/movies/{$formData['movie_id']}")
+        ->with('message', 'Recension postad!');
     }
     
     //Delete review if owned by user
     public function destroy(Review $review) {
-
-        if($review['user_id'] == auth()->id()) {
+        $userId = \Auth::id();
+        $user = User::find($userId);
+        
+        if($review['user_id'] == auth()->id() || $user->admin == true) {
             $review->delete();
         
-            return back();
+            return back()->with('message', 'Recension borttagen!');
         } else {
-            return back();
+            return back()->with('message', 'Du saknar rättigher för denna åtgärd');
         }
     }
 }

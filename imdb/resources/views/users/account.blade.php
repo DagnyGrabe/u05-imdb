@@ -1,11 +1,6 @@
 <x-layout>
-    <div class="m-10 flex flex-col items-stretch flex-wrap md:m-20">
-        
-        <h1 class="text-white text-2xl my-4">
-            Mitt konto
-        </h1>
 
-        <div class="bg-white p-6 sm:p-10 rounded-xl max-w-lg my-8 relative">
+        <div class="bg-white p-6 sm:p-10 rounded-xl max-w-lg md:mx-auto my-24 relative">
             <header class="text-center">
             @if($user->admin == 1)
                 <p class="text-green-600 text-sm sm:text-lg font-bold mx-4 md:mx-6 mb-2 sm:my-2 rounded-xl absolute right-1 top-1">
@@ -131,11 +126,20 @@
                         Spara
                     </button>                    
                 </div>
+                <form action="/users/{{$user->id}}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                        <button type="submit"
+                                class="text-black text-sm font-bold mx-2 p-1 md:px-3 md:py-2 rounded-xl hover:bg-red-500">
+                            <i class="fa-solid fa-xmark mr-1"></i>
+                                Radera konto
+                        </button>
+                </form>
 
                         
             </form>
 
             
         </div>
-    </div>
+    
 </x-layout>

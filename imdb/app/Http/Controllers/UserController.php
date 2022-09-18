@@ -40,7 +40,7 @@ class UserController extends Controller
 
         auth()->login($user);
 
-        return redirect('/');
+        return redirect('/')->with('message', 'Konto skapat!');
     }
     
     //Log out user
@@ -50,7 +50,7 @@ class UserController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        return redirect('/')->with('message', 'Du har loggats ut!');
     }
     
     //Show login form
@@ -73,7 +73,7 @@ class UserController extends Controller
         if (auth()->attempt($formData)) {
             $request->session()->regenerate();
 
-            return redirect('/');
+            return redirect('/')->with('message', 'Du har loggats in!');
 
         } 
 
@@ -130,14 +130,14 @@ class UserController extends Controller
         ]);
 
         if(!Hash::check($request['password'], auth()->user()->password)){
-            return back()->with("error");
+            return back()->with('message', 'Ändringen lyckades inte');
         }
 
         User::where('id', $user)->update([
             'username' => $request['username']
         ]);
        
-        return back()->with("success");
+        return back()->with('message', 'Användarnamnet har uppdaterats!');
     }
 
     //Update password
@@ -155,14 +155,14 @@ class UserController extends Controller
         ]);
     
         if(!Hash::check($request['old_password'], auth()->user()->password)){
-            return back()->with("error");
+            return back()->with('message', 'Ändringen lyckades inte');
         }
     
         User::where('id', $user)->update([
             'password' => bcrypt($request['new_password'])
         ]);
         
-        return back()->with("success");
+        return back()->with('message', 'Lösenord ändrat!');
     }
 
 
