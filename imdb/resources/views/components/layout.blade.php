@@ -13,21 +13,8 @@
             referrerpolicy="no-referrer"
         />
     <script src="{{asset('js/main.js')}}" defer></script>
-        @stack('other-scripts')
-
-    <script src="https://cdn.tailwindcss.com"></script>
-        <script>
-            tailwind.config = {
-                theme: {
-                    screens: {
-                        sm: '480px',
-                        md: '768px',
-                        lg: '976px',
-                        xl: '1440px'
-                    },
-                },
-            };
-        </script>
+        
+    @vite('resources/css/app.css')
 </head>
 
 <body class="bg-black">

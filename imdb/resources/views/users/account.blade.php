@@ -1,6 +1,6 @@
 <x-layout>
 
-        <div class="bg-white p-6 sm:p-10 rounded-xl max-w-lg md:mx-auto my-24 relative">
+        <div class="bg-white p-6 sm:p-10 rounded-xl max-w-lg mx-4 md:mx-auto my-24 relative">
             <header class="text-center">
             @if($user->admin == 1)
                 <p class="text-green-600 text-sm sm:text-lg font-bold mx-4 md:mx-6 mb-2 sm:my-2 rounded-xl absolute right-1 top-1">

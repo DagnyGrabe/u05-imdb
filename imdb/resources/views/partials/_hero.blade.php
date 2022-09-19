@@ -1,3 +1,4 @@
+
     <section class="relative w-full">
         <img src="{{asset('img/john-wick.jpeg')}}" 
              class="min-h-[300px] max-h-[600px] object-cover"/>
